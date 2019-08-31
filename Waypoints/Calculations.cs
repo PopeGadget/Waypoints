@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Waypoints
@@ -21,7 +21,7 @@ namespace Waypoints
             // Pythagorean theorem in three dimensions.
             wDistance = (float)Math.Abs(Math.Sqrt(Math.Pow(wB.X - wA.X, 2) + Math.Pow(wB.Y - wA.Y, 2) + Math.Pow(wB.Z - wA.Z, 2)));
 
-            wDistance *= (float)(1.0/100.0); // Convert from Euclidian distance to in-game miles.
+            wDistance *= (float)(1.0 / 100.0); // Convert from Euclidian distance to in-game miles.
             return wDistance;
         }
 
@@ -80,7 +80,7 @@ namespace Waypoints
         }
 
         // Time taken to get from stations A to B.
-        public float getSTime(Station sA, Station sB, List<Waypoint> waypoints, int maxTrainSpeed)
+        public int getSTime(Station sA, Station sB, List<Waypoint> waypoints, int maxTrainSpeed)
         {
             float sTime = 0;
 
@@ -90,17 +90,17 @@ namespace Waypoints
                 sTime += getWTime(waypoints[i - 1], waypoints[i], maxTrainSpeed);
             }
 
-            sTime += (1 / 3); // 20 seconds added to allow for loading times.
+            sTime += (float)(1.0 / 3.0); // 20 seconds added to allow for loading times.
 
             // Round to highest minute.
             sTime = (float)Math.Ceiling(sTime);
-            return sTime;
+            return (int)sTime;
         }
 
         // Time taken to get from the first station to the last.
-        public float getTotalTime(List<Station> stations, List<Waypoint> waypoints, int maxTrainSpeed)
+        public int getTotalTime(List<Station> stations, List<Waypoint> waypoints, int maxTrainSpeed)
         {
-            float totalTime = 0;
+            int totalTime = 0;
 
             for (int i = 1; i < stations.Count; i++)
             {
