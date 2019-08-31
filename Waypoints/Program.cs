@@ -136,18 +136,18 @@ namespace Waypoints
 
             // Distance from waypoints A to B.
             for (int i = 1; i < wCount; i++)
-	        {
-		    float wDistance = calc.getWDistance(waypoints[i - 1], waypoints[i]);
-                    Console.WriteLine("Distance between waypoints {0} and {1} = {2} miles", i - 1, i, wDistance);
+	    {
+		float wDistance = calc.getWDistance(waypoints[i - 1], waypoints[i]);
+                Console.WriteLine("Distance between waypoints {0} and {1} = {2} miles", i - 1, i, wDistance);
             }
 
             Console.WriteLine();
 
             // Distance from stations A to B.
             for (int i = 1; i < sCount; i++)
-	        {
-		    float sDistance = calc.getSDistance(stations[i - 1], stations[i], waypoints);
-                    Console.WriteLine("Distance between stations {0} and {1} = {2} miles", i - 1, i, sDistance);
+	    {
+		float sDistance = calc.getSDistance(stations[i - 1], stations[i], waypoints);
+                Console.WriteLine("Distance between stations {0} and {1} = {2} miles", i - 1, i, sDistance);
             }
 
             // Distance from the first station to the last.
@@ -159,19 +159,19 @@ namespace Waypoints
 
             // Time taken to get from waypoints A to B.
             for (int i = 1; i < wCount; i++)
-	        {
-		    float wTime = calc.getWTime(waypoints[i - 1], waypoints[i], maxTrainSpeed);
-                    Console.WriteLine("Time between waypoints {0} and {1} = {2} minutes", i - 1, i, wTime);
-	        }
+	    {
+	        float wTime = calc.getWTime(waypoints[i - 1], waypoints[i], maxTrainSpeed);
+                Console.WriteLine("Time between waypoints {0} and {1} = {2} minutes", i - 1, i, wTime);
+	    }
 
             Console.WriteLine();
 
             // Time taken to get from stations A to B.
             for (int i = 1; i < sCount; i++)
-	        {
-		    int sTime = calc.getSTime(stations[i - 1], stations[i], waypoints, maxTrainSpeed);
-                    Console.WriteLine("Time between stations {0} and {1} = {2} minutes", i - 1, i, sTime);
-	        }
+	    {
+	        int sTime = calc.getSTime(stations[i - 1], stations[i], waypoints, maxTrainSpeed);
+	        Console.WriteLine("Time between stations {0} and {1} = {2} minutes", i - 1, i, sTime);
+	    }
 
             // Time taken to get from the first station to the last.
             int totalTime = calc.getTotalTime(stations, waypoints, maxTrainSpeed);
