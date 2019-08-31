@@ -80,9 +80,9 @@ namespace Waypoints
                     bool match = false;
                     foreach (Station s in stations)
                     {
-                        if (s.W == i)
+                        if (s.W == i) // If there is a station at waypoint i.
                         {
-                            if (s.W < wCount - 1)
+                            if (s.W < wCount - 1) // If station is not at the final waypoint.
                             {
                                 stationStr += k + " ";
                             }
@@ -118,7 +118,7 @@ namespace Waypoints
                 Console.Write("\nInput coordinates for waypoint {0} (\"x,y,z\"): ", i);
                 input = Console.ReadLine();
                 string[] coordinates = input.Split(',');
-                // I'm assuming Roblox treats coordinates as decimals.
+                // I'm assuming Roblox treats coordinates as decimals. Should still work as integers.
                 double _X = Convert.ToDouble(coordinates[0]);
                 double _Y = Convert.ToDouble(coordinates[1]);
                 double _Z = Convert.ToDouble(coordinates[2]);
@@ -137,8 +137,8 @@ namespace Waypoints
             // Distance from waypoints A to B.
             for (int i = 1; i < wCount; i++)
 	        {
-		        float wDistance = calc.getWDistance(waypoints[i - 1], waypoints[i]);
-                Console.WriteLine("Distance between waypoints {0} and {1} = {2} miles", i - 1, i, wDistance);
+		    float wDistance = calc.getWDistance(waypoints[i - 1], waypoints[i]);
+                    Console.WriteLine("Distance between waypoints {0} and {1} = {2} miles", i - 1, i, wDistance);
             }
 
             Console.WriteLine();
@@ -146,8 +146,8 @@ namespace Waypoints
             // Distance from stations A to B.
             for (int i = 1; i < sCount; i++)
 	        {
-		        float sDistance = calc.getSDistance(stations[i - 1], stations[i], waypoints);
-                Console.WriteLine("Distance between stations {0} and {1} = {2} miles", i - 1, i, sDistance);
+		    float sDistance = calc.getSDistance(stations[i - 1], stations[i], waypoints);
+                    Console.WriteLine("Distance between stations {0} and {1} = {2} miles", i - 1, i, sDistance);
             }
 
             // Distance from the first station to the last.
@@ -160,8 +160,8 @@ namespace Waypoints
             // Time taken to get from waypoints A to B.
             for (int i = 1; i < wCount; i++)
 	        {
-		        float wTime = calc.getWTime(waypoints[i - 1], waypoints[i], maxTrainSpeed);
-                Console.WriteLine("Time between waypoints {0} and {1} = {2} minutes", i - 1, i, wTime);
+		    float wTime = calc.getWTime(waypoints[i - 1], waypoints[i], maxTrainSpeed);
+                    Console.WriteLine("Time between waypoints {0} and {1} = {2} minutes", i - 1, i, wTime);
 	        }
 
             Console.WriteLine();
@@ -169,8 +169,8 @@ namespace Waypoints
             // Time taken to get from stations A to B.
             for (int i = 1; i < sCount; i++)
 	        {
-		        int sTime = calc.getSTime(stations[i - 1], stations[i], waypoints, maxTrainSpeed);
-                Console.WriteLine("Time between stations {0} and {1} = {2} minutes", i - 1, i, sTime);
+		    int sTime = calc.getSTime(stations[i - 1], stations[i], waypoints, maxTrainSpeed);
+                    Console.WriteLine("Time between stations {0} and {1} = {2} minutes", i - 1, i, sTime);
 	        }
 
             // Time taken to get from the first station to the last.
