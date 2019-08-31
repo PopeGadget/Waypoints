@@ -4,7 +4,7 @@
     {
         /* Waypoints can either be a new addition
          * or an attachment to the already placed
-         * signals and speed limit sensors. */
+         * signals and speed limit triggers. */
 
         // Coordinates in 3D space.
         public double X { get; set; }
