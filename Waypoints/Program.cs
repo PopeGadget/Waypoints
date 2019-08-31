@@ -21,7 +21,7 @@ namespace Waypoints
             #region Manual inputs
             // This region can be replaced by values fetched from elsewhere.
 	    // There is little to no error checking here as ultimately the inputs shouldn't be manual.
-	    // I can add error checking if there is a demand for it.
+	    // I can improve error checking if there is a demand for it.
 
             Console.WriteLine("Input the following as integers.\n");
 
