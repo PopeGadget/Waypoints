@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Waypoints
@@ -82,8 +82,16 @@ namespace Waypoints
                     {
                         if (s.W == i)
                         {
-                            stationStr += k + " ";
+                            if (s.W < wCount - 1)
+                            {
+                                stationStr += k + " ";
+                            }
+                            else
+                            {
+                                stationStr += (sCount - 1) + " ";
+                            }
                             match = true;
+                            k++;
                         }
                     }
 
@@ -91,7 +99,6 @@ namespace Waypoints
                     {
                         stationStr += "  ";
                     }
-                    k++;
                 }
 
                 Console.WriteLine(waypointStr + "(waypoints)");
@@ -162,12 +169,12 @@ namespace Waypoints
             // Time taken to get from stations A to B.
             for (int i = 1; i < sCount; i++)
 	        {
-		        float sTime = calc.getSTime(stations[i - 1], stations[i], waypoints, maxTrainSpeed);
+		        int sTime = calc.getSTime(stations[i - 1], stations[i], waypoints, maxTrainSpeed);
                 Console.WriteLine("Time between stations {0} and {1} = {2} minutes", i - 1, i, sTime);
 	        }
 
             // Time taken to get from the first station to the last.
-            float totalTime = calc.getTotalTime(stations, waypoints, maxTrainSpeed);
+            int totalTime = calc.getTotalTime(stations, waypoints, maxTrainSpeed);
             Console.Write("\nTotal time = {0} minutes", totalTime);
             #endregion
 
