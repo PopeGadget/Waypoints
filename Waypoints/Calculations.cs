@@ -8,7 +8,7 @@ namespace Waypoints
         /* TODO:
          * > Include traffic as a factor for time.
          *  - Could add a TrafficScore property to the Waypoint class.
-         * > Correct the conversion factor at line 27.
+         * > Correct the conversion factor at line 24.
          *  - Currently assumes 1 mile per 100 Euclidian distance. */
 
         #region Distance calculations
