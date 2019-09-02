@@ -74,8 +74,8 @@ namespace Waypoints
             // Assume the train's max speed as the limit if the speed limit (- 5) is above the train's capabilities.
             // Time = Distance / Speed
             wTime = getWDistance(wA, wB) / Math.Min(wA.SpeedLimit - 5, maxTrainSpeed);
-            wTime *= 60; // Convert from hours to minutes
-
+            
+            wTime *= 60; // Convert from hours to minutes.
             return wTime;
         }
 
@@ -91,9 +91,8 @@ namespace Waypoints
             }
 
             sTime += (float)(1.0 / 3.0); // 20 seconds added to allow for loading times.
-
-            // Round to highest minute.
-            sTime = (float)Math.Ceiling(sTime);
+            sTime = (float)Math.Ceiling(sTime); // Round to highest minute.
+            
             return (int)sTime;
         }
 
