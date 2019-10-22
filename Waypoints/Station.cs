@@ -10,10 +10,10 @@
 
         // Station 0 has waypoint 0, and the final station has the final waypoint.
 
-        /* Efficiency may be improved by having only as many
-         * waypoints per station for the number of directions
-         * out of the station, rather than per platform.
-         * Trains outbound in the same cardinal direction but at
-         * different speed limits should count as two directions. */
+        /* Efficiency may be improved by having only a single waypoint stretched
+         * across multiple platforms for each outbound direction.
+         * Trains outbound in the same cardinal direction but at different speed
+         * limits should count as two directions.
+         * This would probably add a margin of error to the distance values, though */
     }
 }
