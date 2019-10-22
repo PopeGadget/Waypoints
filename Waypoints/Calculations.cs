@@ -9,7 +9,7 @@ namespace Waypoints
          * > Include traffic as a factor for time.
          *  - Could add a TrafficScore property to the Waypoint class.
          * > Correct the conversion factor at line 24.
-         *  - Currently assumes 1 mile per 100 Euclidian distance. */
+         *  - Currently assumes 1 mile per 100 studs/Euclidian distance. */
 
         #region Distance calculations
 
@@ -21,7 +21,7 @@ namespace Waypoints
             // Pythagorean theorem in three dimensions.
             wDistance = (float)Math.Abs(Math.Sqrt(Math.Pow(wB.X - wA.X, 2) + Math.Pow(wB.Y - wA.Y, 2) + Math.Pow(wB.Z - wA.Z, 2)));
 
-            wDistance *= (float)(1.0 / 100.0); // Convert from Euclidian distance to in-game miles.
+            wDistance *= (float)(1.0 / 100.0); // Convert from studs/Euclidian distance to in-game miles.
             return wDistance;
         }
 
